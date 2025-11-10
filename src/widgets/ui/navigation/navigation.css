@@ -1,0 +1,23 @@
+.nav__container {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+
+.nav__logo {
+  max-width: 100px;
+  flex: 1;
+}
+.nav__search {
+  flex: 1;
+}
+.nav__btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+
+  gap: 2rem;
+
+  flex: 1;
+}

@@ -1,0 +1,21 @@
+:root {
+  --white: #f2f1ef;
+  --brown: #bc8757;
+  --color-text: #2f281e;
+
+  --mobile-container-width: 320px;
+  --tablet-container-width: 768px;
+  --max-desktop-width: 800px;
+
+  --ff: "Abyssinica SIL", serif;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--color-text);
+  font-family: "Abyssinica SIL", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
