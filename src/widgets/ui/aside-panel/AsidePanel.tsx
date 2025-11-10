@@ -14,12 +14,15 @@ export const AsidePanel = ({categories, selected, onCategorySelect}: Props) => {
   };
   return (
     <div className='aside-panel__container'>
-      <div className='aside-panel__title'></div>
+      <h3 className='aside-panel__title'>Filter & Sort</h3>
+      <h3 className='aside-panel__subtitle'>Categories</h3>
       <div className='aside-panel__categories-list'>
         {categories.map((item) => (
           <button
+            className={`aside-panel__button ${
+              selected === item.id ? "active" : ""
+            }`}
             key={item.id}
-            style={{background: `${selected === item.id ? "#fff" : ""}`}}
             value={item.id}
             onClick={(e) => {
               e.preventDefault();
