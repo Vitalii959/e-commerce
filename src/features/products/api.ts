@@ -1,16 +1,15 @@
 import {useQuery} from "@tanstack/react-query";
 
 export type Product = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
+  brand: string;
   category: string;
+  des: string;
   image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
+  isNew: boolean;
+  oldPrice: number;
+  price: number;
+  title: string;
+  _id: number;
 };
 
 const fetchProduct = async (): Promise<Product[]> => {
