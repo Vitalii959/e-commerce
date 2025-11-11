@@ -1,0 +1,76 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--frame-border-color);
+  border-radius: 12px;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+.card__container:hover .card__image img {
+  transform: scale(1.04);
+}
+.card__container:hover .card__add-to-bag-icon {
+  opacity: 1;
+}
+.card__image {
+  flex: 5;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.card__image img {
+  object-position: 1;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.card__about {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.3rem;
+
+  padding: 1rem;
+}
+.card__title {
+  font-weight: 600;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card__description {
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card__bottom-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(38, 38, 176, 0.891);
+}
+.card__add-to-bag-icon {
+  opacity: 0;
+  border-radius: 50%;
+  background-color: rgb(94, 94, 238);
+
+  padding: 0.8rem;
+
+  transition: opacity 0.2s ease;
+}
+.card__add-to-bag-icon img {
+  width: 19px;
+}
+
+@media (min-width: 768px) {
+}

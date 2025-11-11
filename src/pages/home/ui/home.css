@@ -4,3 +4,9 @@
 
   gap: 2rem;
 }
+
+@media (min-width: 768px) {
+  .home__container {
+    flex-direction: row;
+  }
+}

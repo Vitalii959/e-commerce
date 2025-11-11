@@ -20,7 +20,10 @@ export const Home = () => {
           onCategorySelect={toggleCategory}
           selected={categorySelected}
         />
-        <ProductList products={filterByCategory} />
+        <ProductList
+          products={filterByCategory}
+          currentCategory={categorySelected}
+        />
       </div>
     </Container>
   );
