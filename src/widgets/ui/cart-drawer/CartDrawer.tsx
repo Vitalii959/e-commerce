@@ -6,7 +6,7 @@ import {Cart} from "@/entities/cart/ui/container";
 import {useEffect, useRef} from "react";
 import {Button} from "@/shared/ui/button";
 
-export const CartDrawer = () => {
+export const CartDrawer = ({checkoutLink}: {checkoutLink: string}) => {
   const {isCartDrawerOpen: isOpen, setCartDrawerOpen: setIsOpen} = useCart();
   const isActive = isOpen ? "active" : "";
 
@@ -29,7 +29,7 @@ export const CartDrawer = () => {
           />
         </div>
       </div>
-      <Cart />
+      <Cart checkoutLink={checkoutLink} />
     </div>
   );
 };

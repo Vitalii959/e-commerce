@@ -1,0 +1,9 @@
+.checkoutLayout {
+  margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+  .checkoutLayout {
+    margin-top: 3rem;
+  }
+}

@@ -4,8 +4,9 @@ import {Button} from "@/shared/ui/button";
 import {convertPrice} from "../../util/converter";
 
 import {useCart} from "@/features/cart/useCart";
+import {Link} from "react-router";
 
-export const Cart = () => {
+export const Cart = ({checkoutLink}: {checkoutLink?: string}) => {
   const {
     product,
 
@@ -20,6 +21,7 @@ export const Cart = () => {
   if (product.length === 0) return <p>Cart is empty</p>;
   return (
     <>
+      <h4>Order summary</h4>
       <div className='cart__items'>
         {product.map((item) => (
           <Item
@@ -50,7 +52,11 @@ export const Cart = () => {
         <p>Total</p>
         <p>{`$${convertPrice(total)}`}</p>
       </div>
-      <Button option='primary' text='Checkout' onBtnClick={handleClick} />
+      {checkoutLink && (
+        <Link to={checkoutLink}>
+          <Button option='primary' text='Checkout' onBtnClick={handleClick} />
+        </Link>
+      )}
     </>
   );
 };

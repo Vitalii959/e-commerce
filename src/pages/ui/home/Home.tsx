@@ -26,7 +26,7 @@ export const Home = () => {
           products={filterByCategory}
           currentCategory={categorySelected}
         />
-        <CartDrawer />
+        <CartDrawer checkoutLink={"/checkout/forms/shipping"} />
       </div>
     </Container>
   );
