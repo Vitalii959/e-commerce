@@ -1,31 +1,21 @@
-import {useState} from "react";
 import "./cart.css";
 import {Item} from "../components";
 import {Button} from "@/shared/ui/button";
 
 import closeBtn from "@/shared/assets/x-mark.png";
-
-const product = [
-  {
-    _id: 101,
-    title: "Canon EOS Rebel T100",
-    des: "Canon EOS Rebel T100 Digital SLR Camera with 18-55mm Lens Kit, 18 Megapixel Sensor, Wi-Fi, DIGIC4+, SanDisk 32GB Memory Card and Live View Shooting",
-    oldPrice: 700,
-    price: 559.99,
-    brand: "Canon",
-    image: "https://i.ibb.co/1r28gMk/1.webp",
-    isNew: true,
-    category: "Electronics"
-  }
-];
+import {useCart} from "@/features/cart/useCart";
 
 export const Cart = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  // const [isOpen, setIsOpen] = useState(true);
+  const {
+    product,
+    isCartDrawerOpen: isOpen,
+    setCartDrawerOpen: setIsOpen
+  } = useCart();
   const isActive = isOpen ? "active" : "";
 
   const handleClick = () => {};
   return (
-    // <div className={`cart__bg-wrapper ${isActive}`}>
     <div className={`cart ${isActive}`}>
       <div className='cart__header'>
         <h4 className='cart__header-title'>Title</h4>
@@ -67,6 +57,5 @@ export const Cart = () => {
       </div>
       <Button option='primary' text='Checkout' onBtnClick={handleClick} />
     </div>
-    // </div>
   );
 };

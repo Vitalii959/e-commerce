@@ -1,7 +1,10 @@
 import {useCartStore} from "./store";
 
 export const useCart = () => {
-  const addProduct = useCartStore().addProduct;
+  const product = useCartStore((s) => s.products);
+  const addProduct = useCartStore((s) => s.addProduct);
+  const isCartDrawerOpen = useCartStore((s) => s.isCartDrawerOpen);
+  const setCartDrawerOpen = useCartStore((s) => s.setCartDrawerOpen);
 
-  return {addProduct};
+  return {product, addProduct, isCartDrawerOpen, setCartDrawerOpen};
 };

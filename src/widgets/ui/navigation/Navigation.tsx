@@ -4,8 +4,10 @@ import logo from "@/shared/assets/logo.png";
 import like from "@/shared/assets/heart.png";
 import bag from "@/shared/assets/shopping-bag.png";
 import {Container} from "@/shared/ui/container";
+import {useCart} from "@/features/cart/useCart";
 
 export const Navigation = () => {
+  const {setCartDrawerOpen} = useCart();
   return (
     <Container>
       <nav className='nav__container'>
@@ -17,9 +19,12 @@ export const Navigation = () => {
           <div className='nav__btns-like'>
             <img src={like} alt='' />
           </div>
-          <div className='nav__btns-bag'>
+          <button
+            className='nav__btns-bag'
+            onClick={() => setCartDrawerOpen(true)}
+          >
             <img src={bag} alt='' />
-          </div>
+          </button>
         </div>
       </nav>
     </Container>
