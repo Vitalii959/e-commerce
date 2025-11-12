@@ -1,13 +1,13 @@
 import "./item.css";
 
 import {Button} from "@/shared/ui/button";
-import type {Product} from "@/features/products/api";
+import type {CartProduct} from "@/features/cart/store";
+import {useCart} from "@/features/cart/useCart";
 
-type Props = Pick<Product, "image" | "title" | "price"> & {
-  handleClick: () => void;
-};
+type Props = Pick<CartProduct, "image" | "title" | "price" | "qty" | "_id">;
 
-export const Item = ({image, title, price, handleClick}: Props) => {
+export const Item = ({image, title, price, qty, _id}: Props) => {
+  const {setQty, deleteProduct} = useCart();
   return (
     <div className='cart__item'>
       <div className='cart__item-img'>
@@ -16,12 +16,24 @@ export const Item = ({image, title, price, handleClick}: Props) => {
       <div className='cart__item-description'>
         <div className='cart__item-title'>{title}</div>
         <div className='cart__item-subtitle'>
-          <div className='cart__item-qty'>{`Qty: ${1}`}</div>
+          <div className='cart__item-qty'>{`Qty:`}</div>
           <div className='cart__item-btns'>
-            <Button text='-' option='secondary' onBtnClick={handleClick} />
-            <div className='cart__item-display'>5</div>
-            <Button text='+' option='secondary' onBtnClick={handleClick} />
-            <Button text='Delete' option='secondary' onBtnClick={handleClick} />
+            <Button
+              text='-'
+              option='secondary'
+              onBtnClick={() => setQty("decrease", _id)}
+            />
+            <div className='cart__item-display'>{qty}</div>
+            <Button
+              text='+'
+              option='secondary'
+              onBtnClick={() => setQty("increase", _id)}
+            />
+            <Button
+              text='Delete'
+              option='secondary'
+              onBtnClick={() => deleteProduct(_id)}
+            />
           </div>
         </div>
       </div>
