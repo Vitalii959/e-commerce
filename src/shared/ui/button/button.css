@@ -1,0 +1,40 @@
+.button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 0em 0.5rem;
+  border-radius: 0.3em;
+}
+
+.button__text {
+  width: fit-content;
+  height: fit-content;
+
+  text-align: center;
+  align-self: center;
+}
+
+.button.primary {
+  color: white;
+  background: #3c40bd;
+
+  transition: transform 0.1s ease;
+}
+.button.secondary {
+  background: transparent;
+  box-shadow: 1px 1px 1px 0px #00000029, inset 1px 1px 2px white;
+  transition: all 0.12s ease;
+}
+
+.button.secondary:active {
+  transform: translate3d(1px, 1px, 1px);
+  box-shadow: inset 1px 1px 2px 0px #00000029, inset -1px -1px 2px white;
+}
+.button.secondary:active {
+  box-shadow: inset 1px 1px 1px 0px #00000029, 1px 1px 2px white;
+}
+.button.button.primary:active {
+  transform: scale(0.995);
+}
