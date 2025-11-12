@@ -1,3 +1,4 @@
+import React from "react";
 import "./button.css";
 
 type Props = {
@@ -5,16 +6,19 @@ type Props = {
   option: "primary" | "secondary";
   logo?: string;
   onBtnClick: () => void;
-};
-export const Button = ({text, option, logo, onBtnClick, ...rest}: Props) => {
-  return (
-    <button
-      className={`button ${option ? option : ""}`}
-      onClick={onBtnClick}
-      {...rest}
-    >
-      {logo && <div className='button__logo'>{logo}</div>}
-      <div className='button__text'>{text}</div>
-    </button>
-  );
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+export const Button = React.forwardRef<HTMLButtonElement, Props>(
+  function Button({text, logo, option, onBtnClick, ...rest}, ref) {
+    return (
+      <button
+        ref={ref}
+        className={`button ${option ? option : ""}`}
+        onClick={onBtnClick}
+        {...rest}
+      >
+        {logo && <img src={logo}></img>}
+        <div className='button__text'>{text}</div>
+      </button>
+    );
+  }
+);

@@ -5,7 +5,8 @@ import {useCategories} from "@/features/products/useCategories";
 import {useProducts} from "@/features/products/api";
 import {AsidePanel} from "@/widgets/ui/aside-panel";
 import {useFilter} from "@/features/products/useFilter";
-import {Cart} from "@/entities/cart/ui/container";
+
+import {CartDrawer} from "@/widgets/ui/cart-drawer";
 
 export const Home = () => {
   const {data: products} = useProducts();
@@ -25,7 +26,7 @@ export const Home = () => {
           products={filterByCategory}
           currentCategory={categorySelected}
         />
-        <Cart />
+        <CartDrawer />
       </div>
     </Container>
   );
