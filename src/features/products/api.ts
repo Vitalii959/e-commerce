@@ -12,7 +12,7 @@ export type Product = {
   _id: number;
 };
 
-const fetchProduct = async (): Promise<Product[]> => {
+export const fetchProduct = async (): Promise<Product[]> => {
   const URL = "https://fakestoreapiserver.reactbd.org/api/walmartproducts";
 
   const data = await fetch(URL).then((res) => res.json());

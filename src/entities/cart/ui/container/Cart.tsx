@@ -8,7 +8,7 @@ import {Link} from "react-router";
 
 type Props = {
   checkoutLink?: string;
-  handleClick: () => void;
+  handleClick?: () => void;
 };
 
 export const Cart = ({checkoutLink, handleClick}: Props) => {

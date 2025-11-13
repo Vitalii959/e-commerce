@@ -5,7 +5,7 @@ type Props = {
   text: string;
   option: "primary" | "secondary";
   logo?: string;
-  onBtnClick: () => void;
+  onBtnClick?: () => void;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 export const Button = React.forwardRef<HTMLButtonElement, Props>(
   function Button({text, logo, option, onBtnClick, ...rest}, ref) {
