@@ -29,7 +29,7 @@ export const CartDrawer = ({checkoutLink}: {checkoutLink: string}) => {
           />
         </div>
       </div>
-      <Cart checkoutLink={checkoutLink} />
+      <Cart checkoutLink={checkoutLink} handleClick={() => setIsOpen(false)} />
     </div>
   );
 };

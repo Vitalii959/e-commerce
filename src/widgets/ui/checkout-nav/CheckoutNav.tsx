@@ -4,6 +4,8 @@ import {NavLink} from "react-router";
 export const CheckoutNav = () => {
   return (
     <div className='checkoutNav'>
+      <NavLink to='/'>Home</NavLink>
+      {" / "}
       <NavLink to='/checkout/forms/shipping'>Shipping</NavLink>
       {" / "}
       <NavLink to='/checkout/forms/customer'>Customer</NavLink>

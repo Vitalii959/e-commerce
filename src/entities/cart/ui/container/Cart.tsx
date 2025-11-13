@@ -1,12 +1,17 @@
 import "./cart.css";
 import {Item} from "../components";
 import {Button} from "@/shared/ui/button";
-import {convertPrice} from "../../util/converter";
+import {convertPrice} from "../../../../shared/util/converter";
 
 import {useCart} from "@/features/cart/useCart";
 import {Link} from "react-router";
 
-export const Cart = ({checkoutLink}: {checkoutLink?: string}) => {
+type Props = {
+  checkoutLink?: string;
+  handleClick: () => void;
+};
+
+export const Cart = ({checkoutLink, handleClick}: Props) => {
   const {
     product,
 
@@ -15,8 +20,6 @@ export const Cart = ({checkoutLink}: {checkoutLink?: string}) => {
     taxes,
     total
   } = useCart();
-
-  const handleClick = () => {};
 
   if (product.length === 0) return <p>Cart is empty</p>;
   return (
