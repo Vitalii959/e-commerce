@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "homepage": "https://github.com/Vitalii959/e-commerce",
+    "homepage": "https://github.com/Vitalii959/e-commerce/",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
