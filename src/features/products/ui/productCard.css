@@ -57,12 +57,12 @@
 .card__price {
   font-size: 1.3rem;
   font-weight: 600;
-  color: rgba(38, 38, 176, 0.891);
+  color: var(--color-primary);
 }
 .card__add-to-bag-icon {
   opacity: 0;
   border-radius: 50%;
-  background-color: rgb(94, 94, 238);
+  background-color: var(--color-primary);
 
   padding: 0.8rem;
 

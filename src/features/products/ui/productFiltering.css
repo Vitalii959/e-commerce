@@ -1,14 +1,14 @@
 .aside-panel__title {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: var(--text-reg);
+  font-weight: var(--text-bold);
 
   border-bottom: 1px solid var(--frame-border-color);
 
   padding-bottom: 0.5rem;
 }
 .aside-panel__subtitle {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: var(--text-reg);
+  font-weight: var(--text-bold);
 
   padding: 0.5rem 0;
 }
@@ -18,6 +18,9 @@
 
   display: flex;
   flex-direction: column;
+
+  font-size: var(--text-sm);
+  font-weight: var(--text-bold);
 
   gap: 0.3rem;
 }
@@ -38,6 +41,6 @@
     max-width: 270px;
   }
   .aside-panel__button:hover {
-    background-color: rgba(178, 208, 240, 0.242);
+    background-color: #006bf824;
   }
 }

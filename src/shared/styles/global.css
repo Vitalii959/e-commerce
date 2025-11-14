@@ -1,19 +1,39 @@
 :root {
-  --white: #f2f1ef;
+  --background-color: #e8e6e3;
+  --white-color: #ffffff;
+
   --frame-border-color: rgb(207, 181, 181);
-  --color-text: #2f281e;
 
-  --mobile-container-width: 320px;
-  --tablet-container-width: 768px;
-  --max-desktop-width: 1536px;
+  --text-color-primary: #1f1e1e;
+  --text-color-secondary: rgb(97, 117, 137);
+  --color-primary: rgb(19, 127, 236);
+  --error-color: #e83737;
 
-  --ff: "Abyssinica SIL", serif;
+  --text-xl: 1.3rem;
+  --text-lg: 1.15rem;
+  --text-reg: 1rem;
+  --text-sm: 0.875rem;
+
+  --text-bold: 600;
+  --text-mid: 500;
+  --text-thin: 300;
+
+  --ff: "Inter", sans-serif;
 }
 
 body {
-  background-color: var(--white);
-  color: var(--color-text);
-  font-family: "Abyssinica SIL", serif;
+  background: var(--background-color);
+  color: var(--text-color-primary);
+  font-family: var(--ff);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 html {

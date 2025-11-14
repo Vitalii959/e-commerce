@@ -17,7 +17,7 @@ export const Cart = ({checkoutLink, handleClick}: Props) => {
   if (product.length === 0) return <p>Cart is empty</p>;
   return (
     <>
-      <h4>Order summary</h4>
+      <h4 className='cart__title'>Order summary</h4>
       <div className='cart__items'>
         {product.map((item) => (
           <CartItem

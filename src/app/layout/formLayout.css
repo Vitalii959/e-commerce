@@ -5,6 +5,21 @@
   margin-top: 2rem;
 }
 
+.cart__container {
+  display: flex;
+  flex-direction: column;
+
+  flex: 2;
+
+  padding: 1rem;
+
+  border-radius: 8px;
+
+  height: fit-content;
+
+  background-color: var(--white-color);
+}
+
 @media (min-width: 768px) {
   .formLayout {
     gap: 2rem;

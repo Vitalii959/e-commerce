@@ -6,7 +6,9 @@ import {Cart} from "@/features/cart/ui/Cart";
 export const FormsLayout = () => {
   return (
     <div className='formLayout'>
-      <Cart />
+      <div className='cart__container'>
+        <Cart />
+      </div>
 
       <Outlet />
     </div>

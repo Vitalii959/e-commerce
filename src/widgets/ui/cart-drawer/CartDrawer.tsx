@@ -16,9 +16,9 @@ export const CartDrawer = ({checkoutLink}: {checkoutLink: string}) => {
   }, [isOpen]);
 
   return (
-    <div className={`cart ${isActive}`}>
-      <div className='cart__header'>
-        <h4 className='cart__header-title'>Order Summary</h4>
+    <div className={`cart__drawer ${isActive}`}>
+      <div className='cart__drawer-header'>
+        <h4 className='cart__drawer-header-title'>Order Summary</h4>
         <div className='closeBtn'>
           <Button
             ref={closeRef}
