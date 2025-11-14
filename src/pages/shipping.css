@@ -7,68 +7,7 @@
   gap: 2rem;
 }
 
-.shipping-form__container,
-.shipping-form__title-container {
-  background: #ffff;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 1rem;
-}
-.shipping-form__container {
-  border-radius: 0 0 0.4em 0.4rem;
-}
-.shipping-form__title-container {
-  border-radius: 0.4em 0.4rem 0 0;
-  margin-bottom: 2px;
-}
-
-.shipping-form__title {
-  font-weight: 1000;
-}
-
-.shipping-form__form {
-  display: flex;
-  flex-direction: column;
-
-  gap: 1rem;
-}
-
-.shipping-form__address-container {
-  display: flex;
-  flex-direction: column;
-
-  gap: 1rem;
-}
-.shipping-form__name,
-.shipping-form__address-street,
-.shipping-form__address-city,
-.shipping-form__address-state,
-.shipping-form__address-appartment,
-.shipping-form__address-country,
-.shipping-form__address-zip {
-  display: flex;
-  flex-direction: column;
-}
-
-.shipping-form__name .input,
-.shipping-form__address-street .input,
-.shipping-form__address-city .input,
-.shipping-form__address-state .input,
-.shipping-form__address-appartment .input,
-.shipping-form__address-country .input,
-.shipping-form__address-zip .input {
-  padding: 0.3rem 0.5rem;
-  font-size: 16px;
-
-  border-radius: 8px;
-  border: 1px solid var(--frame-border-color);
-}
-
-@media (min-width: 768px) {
-  .shipping-form__address-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+.shipping__title {
+  font-size: 2rem;
+  font-weight: 900;
 }

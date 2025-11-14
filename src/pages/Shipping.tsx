@@ -4,7 +4,7 @@ import "./shipping.css";
 export const Shipping = () => {
   return (
     <div className='shipping__container'>
-      <h1 className='shipping'>Shipping Information</h1>
+      <h1 className='shipping__title'>Shipping Information</h1>
       <ShippingForm />
       <ShippingMethod />
     </div>

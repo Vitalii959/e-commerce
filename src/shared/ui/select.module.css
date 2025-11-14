@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: var(--text-bold);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select {
+  padding: 0.4rem 0.5rem;
+  font-size: 16px;
+
+  border-radius: 8px;
+  border: 1px solid var(--frame-border-color);
+}
+.optional {
+  color: var(--text-color-secondary);
+}
+.error {
+  padding: 0.2rem 0.8rem;
+
+  font-size: var(--text-sm);
+
+  color: var(--error-color);
+}
