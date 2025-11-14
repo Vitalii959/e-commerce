@@ -1,23 +1,19 @@
 import {Button, Input} from "@/shared/ui";
 import s from "./customerForm.module.css";
 import {useForm, type SubmitHandler} from "react-hook-form";
+import type {CustomerType} from "../model/customerTypes";
+import {useFormStore} from "../model/useFormStore";
 
-type FormValues = {
-  name: string;
-  email: string;
-  phone: string;
-};
 export const CustomerForm = () => {
+  const {customer, setCustomer} = useFormStore();
   const {
     register,
     handleSubmit,
 
     formState: {errors}
-  } = useForm<FormValues>();
+  } = useForm<CustomerType>({defaultValues: customer});
 
-  console.log(errors);
-
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<CustomerType> = (data) => setCustomer(data);
   return (
     <div>
       <div className={s.formContainer}>

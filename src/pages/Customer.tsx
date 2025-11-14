@@ -1,4 +1,4 @@
-import {CustomerForm} from "@/features/customer-form/ui";
+import {CustomerForm} from "@/features/forms/ui";
 import s from "./customer.module.css";
 export const Customer = () => {
   return (

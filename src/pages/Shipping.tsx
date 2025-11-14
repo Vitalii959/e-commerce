@@ -1,4 +1,4 @@
-import {ShippingForm, ShippingMethod} from "@/features/shipping-form/ui";
+import {ShippingForm, ShippingMethod} from "@/features/forms/ui";
 import "./shipping.css";
 
 export const Shipping = () => {

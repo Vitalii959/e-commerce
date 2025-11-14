@@ -1,1 +1,0 @@
-export {CustomerForm} from "./CustomerForm";

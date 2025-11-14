@@ -2,25 +2,19 @@ import {Button, Input, Select} from "@/shared/ui";
 import "./shippingForm.css";
 import {useForm, type SubmitHandler} from "react-hook-form";
 import {helper} from "../model/citiesArray";
+import type {ShippingType} from "../model/shippingTypes";
+import {useFormStore} from "../model/useFormStore";
 
-type FormValues = {
-  appartment: string;
-  city: string;
-  country: string;
-  name: string;
-  state: string;
-  street: string;
-  zip: string;
-};
 export const ShippingForm = () => {
+  const {address, setAddress} = useFormStore();
   const {
     register,
     handleSubmit,
     watch,
     formState: {errors}
-  } = useForm<FormValues>();
+  } = useForm<ShippingType>({defaultValues: address});
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ShippingType> = (data) => setAddress(data);
 
   const getCities = watch("country");
 
