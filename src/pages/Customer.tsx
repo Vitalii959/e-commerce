@@ -1,4 +1,10 @@
-import "./customer.css";
+import {CustomerForm} from "@/features/customer-form/ui";
+import s from "./customer.module.css";
 export const Customer = () => {
-  return <h1 className='customer'>Customer</h1>;
+  return (
+    <div className={s.container}>
+      <h1 className={s.title}>Customer Information</h1>
+      <CustomerForm />
+    </div>
+  );
 };
