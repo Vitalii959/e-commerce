@@ -1,0 +1,56 @@
+.paymentMethod {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: var(--white-color);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+  display: block;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.paymentMethodActive {
+  box-shadow: 0 0 0 1px #11182714;
+  background-color: #f9fafb;
+
+  outline: 1px solid var(--frame-border-color);
+}
+
+/* Hide native radio */
+.radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.name {
+  font-weight: var(--text-bold);
+}
+
+.note {
+  font-size: var(--text-sm);
+  color: var(--text-color-secondary);
+}
+
+/* Slide panel */
+.details {
+  overflow: hidden;
+  max-height: 0px;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  margin-top: 0;
+}
+
+.detailsOpen {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
