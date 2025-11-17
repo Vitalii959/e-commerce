@@ -1,17 +1,33 @@
 import "./cartItem.css";
 
 import {Button} from "@/shared/ui";
-import type {CartProduct} from "@/features/cart/model/store";
-import {useCart} from "@/features/cart/model/useCart";
+
 import {convertPrice} from "@/shared/util/converter";
 
-type Props = {type: "view" | "edit"} & Pick<
+import type {
+  SetQtyType,
+  DeleteProduct,
   CartProduct,
-  "image" | "title" | "price" | "qty" | "_id"
->;
+  displayOption
+} from "../model/types";
 
-export const CartItem = ({type, image, title, price, qty, _id}: Props) => {
-  const {setQty, deleteProduct} = useCart();
+type Props = {
+  type: displayOption;
+  setQty: SetQtyType;
+  deleteProduct: DeleteProduct;
+} & Pick<CartProduct, "image" | "title" | "price" | "qty" | "_id">;
+
+export const CartItem = ({
+  type,
+  image,
+  title,
+  price,
+  qty,
+  _id,
+  setQty,
+  deleteProduct
+}: Props) => {
+  // const {setQty, deleteProduct} = useCart();
   const isEditAllow = type === "edit" ? true : false;
   return (
     <div className='cart__item'>

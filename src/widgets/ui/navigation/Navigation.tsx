@@ -4,10 +4,10 @@ import logo from "@/shared/assets/logo.png";
 import like from "@/shared/assets/heart.png";
 import bag from "@/shared/assets/shopping-bag.png";
 import {Container} from "@/shared/ui";
-import {useCart} from "@/features/cart/model/useCart";
+import {useCartStore} from "@/features/cart/model/useCartStore";
 
 export const Navigation = () => {
-  const {setCartDrawerOpen} = useCart();
+  const {setCartDrawerOpen} = useCartStore();
   return (
     <Container>
       <nav className='nav__container'>

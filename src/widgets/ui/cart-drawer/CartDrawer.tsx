@@ -1,13 +1,14 @@
 import "./cartDrawer.css";
 
 import closeBtn from "@/shared/assets/x-mark.png";
-import {useCart} from "@/features/cart/model/useCart";
+import {useCartStore} from "@/features/cart/model/useCartStore";
 import {Cart} from "@/features/cart/ui/";
 import {useEffect, useRef} from "react";
 import {Button} from "@/shared/ui";
 
 export const CartDrawer = ({checkoutLink}: {checkoutLink: string}) => {
-  const {isCartDrawerOpen: isOpen, setCartDrawerOpen: setIsOpen} = useCart();
+  const {isCartDrawerOpen: isOpen, setCartDrawerOpen: setIsOpen} =
+    useCartStore();
   const isActive = isOpen ? "active" : "";
 
   const closeRef = useRef<HTMLButtonElement | null>(null);

@@ -4,17 +4,19 @@ import {Button} from "@/shared/ui";
 import {convertPrice} from "@/shared/util/converter";
 
 import {Link} from "react-router";
-import {useCart} from "../model/useCart";
+import {useCartStore} from "../model/useCartStore";
+import type {displayOption} from "../model/types";
 
 type Props = {
-  type: "view" | "edit";
+  type: displayOption;
   title?: string;
   checkoutLink?: string;
   handleClick?: () => void;
 };
 
 export const Cart = ({type, title, checkoutLink, handleClick}: Props) => {
-  const {product, subtotal, shipping, taxes, total} = useCart();
+  const {product, subtotal, shipping, taxes, total, setQty, deleteProduct} =
+    useCartStore();
 
   if (product.length === 0) return <p>Cart is empty</p>;
   return (
@@ -30,6 +32,8 @@ export const Cart = ({type, title, checkoutLink, handleClick}: Props) => {
             price={item.price}
             qty={item.qty}
             _id={item._id}
+            setQty={setQty}
+            deleteProduct={deleteProduct}
           />
         ))}
       </div>

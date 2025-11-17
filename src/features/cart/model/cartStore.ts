@@ -1,18 +1,23 @@
 import {create} from "zustand";
-import type {Product} from "@/features/products/model/api";
+import type {
+  CartProduct,
+  IsCartDrawerOpen,
+  AddProduct,
+  SetCartDrawerOpen,
+  SetQtyType,
+  DeleteProduct
+} from "./types";
 
-export type CartProduct = Product & {qty: number};
-
-type CartStore = {
+export type CartStore = {
   products: CartProduct[];
-  isCartDrawerOpen: boolean;
-  addProduct: (product: Product) => void;
-  setCartDrawerOpen: (v: boolean) => void;
-  setQty: (value: "increase" | "decrease", id: number) => void;
-  deleteProduct: (id: number) => void;
+  isCartDrawerOpen: IsCartDrawerOpen;
+  addProduct: AddProduct;
+  setCartDrawerOpen: SetCartDrawerOpen;
+  setQty: SetQtyType;
+  deleteProduct: DeleteProduct;
 };
 
-export const useCartStore = create<CartStore>()((set) => ({
+export const cartStore = create<CartStore>()((set) => ({
   products: [],
   isCartDrawerOpen: false,
 

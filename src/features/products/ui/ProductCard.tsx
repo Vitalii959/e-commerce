@@ -2,13 +2,13 @@ import "./productCard.css";
 import shopingCart from "@/shared/assets/shopping-cart.png";
 
 import type {Product} from "@/features/products/model/api";
-import {useCart} from "@/features/cart/model/useCart";
+import {useCartStore} from "@/features/cart/model/useCartStore";
 
 type Props = {
   product: Product;
 };
 export const ProductCard = ({product}: Props) => {
-  const {addProduct} = useCart();
+  const {addProduct} = useCartStore();
 
   return (
     <div className='card__container'>
