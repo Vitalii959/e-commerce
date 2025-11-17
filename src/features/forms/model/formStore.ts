@@ -2,7 +2,7 @@ import {create} from "zustand";
 import type {CustomerType} from "./customerTypes";
 import type {ShippingType, MethodType} from "./shippingTypes";
 
-export type StoreType = {
+export type FormType = {
   customer: CustomerType;
   address: ShippingType;
   shippingMethod: MethodType | null;
@@ -12,7 +12,7 @@ export type StoreType = {
   setShippingMethod: (object: MethodType) => void;
 };
 
-export const useStore = create<StoreType>((set) => ({
+export const formStore = create<FormType>((set) => ({
   customer: {name: "", email: "", phone: ""},
   address: {
     appartment: "",

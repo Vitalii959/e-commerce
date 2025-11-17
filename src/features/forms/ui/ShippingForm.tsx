@@ -1,7 +1,7 @@
 import {Button, Input, Select} from "@/shared/ui";
 import "./shippingForm.css";
 import {useForm, type SubmitHandler} from "react-hook-form";
-import {helper} from "../model/citiesArray";
+import {regionsHelper} from "../model/createRegionHelper";
 import type {ShippingType} from "../model/shippingTypes";
 import {useFormStore} from "../model/useFormStore";
 
@@ -18,7 +18,7 @@ export const ShippingForm = () => {
 
   const getCities = watch("country");
 
-  const {getCity, getState} = helper();
+  const {getCity, getState} = regionsHelper();
 
   return (
     <div>

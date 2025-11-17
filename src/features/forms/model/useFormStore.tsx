@@ -1,13 +1,13 @@
-import {useStore} from "@/features/forms/model/useStore";
+import {formStore} from "@/features/forms/model/formStore";
 
 export const useFormStore = () => {
-  const customer = useStore((s) => s.customer);
-  const address = useStore((s) => s.address);
-  const shippingMethod = useStore((s) => s.shippingMethod);
+  const customer = formStore((s) => s.customer);
+  const address = formStore((s) => s.address);
+  const shippingMethod = formStore((s) => s.shippingMethod);
 
-  const setCustomer = useStore((s) => s.setCustomer);
-  const setAddress = useStore((s) => s.setAddress);
-  const setShippingMethod = useStore((s) => s.setShippingMethod);
+  const setCustomer = formStore((s) => s.setCustomer);
+  const setAddress = formStore((s) => s.setAddress);
+  const setShippingMethod = formStore((s) => s.setShippingMethod);
 
   return {
     customer,
