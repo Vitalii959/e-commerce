@@ -28,7 +28,7 @@ export const CustomerForm = () => {
               register={register("name", {
                 required: "This field required",
                 pattern: {
-                  value: /^[A-Za-z]+([ '-][A-Za-z]+)+$/,
+                  value: /^[A-Za-z]+([ '-][A-Za-z]+)*$/,
                   message: "Enter a valid full name"
                 }
               })}
@@ -42,7 +42,7 @@ export const CustomerForm = () => {
               register={register("email", {
                 required: "This field required",
                 pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
                   message: "Enter a valid email"
                 }
               })}
@@ -56,7 +56,7 @@ export const CustomerForm = () => {
               register={register("phone", {
                 required: "This field required",
                 pattern: {
-                  value: /^\+?[\d\s()-]{7,20}$/,
+                  value: /^\+?[0-9\s().-]{7,20}$/,
                   message: "Enter a valid phone number"
                 }
               })}

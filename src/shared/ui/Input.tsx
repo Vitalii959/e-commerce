@@ -23,7 +23,7 @@ export const Input = ({
 }: InputProps) => {
   return (
     <div className={s.container}>
-      <label className={s.label}>
+      <label htmlFor={id} className={s.label}>
         {label} {optional && <span className={s.optional}>{optional}</span>}
       </label>
       <input

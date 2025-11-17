@@ -44,12 +44,17 @@ export const ShippingForm = () => {
               required
             />
             <Input
-              label='Apartmentm suite, etc.'
+              label='Apartment suite, etc.'
               optional='(optional)'
               type='text'
               id='appartment'
               placeholder='Apt 123'
-              register={register("appartment")}
+              register={register("appartment", {
+                pattern: {
+                  value: /^[0-9A-Za-z\s.'-]*$/,
+                  message: "Enter a valid apartment/suite"
+                }
+              })}
             />
             <Input
               label='City'
@@ -57,7 +62,13 @@ export const ShippingForm = () => {
               id='city'
               placeholder='New York'
               error={errors.city?.message}
-              register={register("city", {required: "This field required"})}
+              register={register("city", {
+                required: "This field required",
+                pattern: {
+                  value: /^[A-Za-z\s.'-]{2,}$/,
+                  message: "Enter a valid city"
+                }
+              })}
             />
 
             <Select
@@ -80,7 +91,13 @@ export const ShippingForm = () => {
               id='zip'
               placeholder='10001'
               error={errors.zip?.message}
-              register={register("zip", {required: "This field required"})}
+              register={register("zip", {
+                required: "This field required",
+                pattern: {
+                  value: /^\d{5}(-\d{4})?$/,
+                  message: "Enter a valid ZIP code"
+                }
+              })}
             />
           </div>
           <Button type={"submit"} option='primary' text='Confirm' />
