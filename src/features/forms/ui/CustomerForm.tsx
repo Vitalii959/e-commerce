@@ -3,9 +3,11 @@ import s from "./customerForm.module.css";
 import {useForm, type SubmitHandler} from "react-hook-form";
 import type {CustomerType} from "../model/customerTypes";
 import {useFormStore} from "../model/useFormStore";
+import {useNavigate} from "react-router";
 
 export const CustomerForm = () => {
-  const {customer, setCustomer} = useFormStore();
+  const {customer, setCustomer, setIsCustomerFormSuccess} = useFormStore();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -13,7 +15,11 @@ export const CustomerForm = () => {
     formState: {errors}
   } = useForm<CustomerType>({defaultValues: customer});
 
-  const onSubmit: SubmitHandler<CustomerType> = (data) => setCustomer(data);
+  const onSubmit: SubmitHandler<CustomerType> = (data) => {
+    setIsCustomerFormSuccess(true);
+    setCustomer(data);
+    navigate("/checkout/payment");
+  };
   return (
     <div>
       <div className={s.formContainer}>
@@ -62,6 +68,7 @@ export const CustomerForm = () => {
               })}
             />
           </div>
+
           <Button type={"submit"} option='primary' text='Checkout' />
         </form>
       </div>

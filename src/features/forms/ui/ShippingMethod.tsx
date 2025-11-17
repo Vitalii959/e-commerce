@@ -2,6 +2,7 @@ import {convertPrice} from "@/shared/util/converter";
 import "./shippingMethod.css";
 import type {MethodType} from "../model/shippingTypes";
 import {useFormStore} from "../model/useFormStore";
+import {useEffect} from "react";
 
 const shipingMethods: MethodType[] = [
   {
@@ -14,9 +15,14 @@ const shipingMethods: MethodType[] = [
   {title: "Next-Day", deliveryTime: "Next Business Days", price: 25}
 ];
 export const ShippingMethod = () => {
-  const {setShippingMethod} = useFormStore();
+  const {shippingMethod, setShippingMethod} = useFormStore();
   const defaultMethod = shipingMethods.find((m) => m.default === true);
-  if (defaultMethod) setShippingMethod(defaultMethod);
+
+  useEffect(() => {
+    if (!shippingMethod && defaultMethod) {
+      setShippingMethod(defaultMethod);
+    }
+  }, [shippingMethod, defaultMethod, setShippingMethod]);
 
   return (
     <div>

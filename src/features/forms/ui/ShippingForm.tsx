@@ -4,9 +4,11 @@ import {useForm, type SubmitHandler} from "react-hook-form";
 import {regionsHelper} from "../model/createRegionHelper";
 import type {ShippingType} from "../model/shippingTypes";
 import {useFormStore} from "../model/useFormStore";
+import {useNavigate} from "react-router";
 
 export const ShippingForm = () => {
-  const {address, setAddress} = useFormStore();
+  const {address, setAddress, setIsShippingFormSuccess} = useFormStore();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,12 +16,15 @@ export const ShippingForm = () => {
     formState: {errors}
   } = useForm<ShippingType>({defaultValues: address});
 
-  const onSubmit: SubmitHandler<ShippingType> = (data) => setAddress(data);
-
   const getCities = watch("country");
 
   const {getCity, getState} = regionsHelper();
 
+  const onSubmit: SubmitHandler<ShippingType> = (data) => {
+    setIsShippingFormSuccess(true);
+    setAddress(data);
+    navigate("/checkout/forms/customer");
+  };
   return (
     <div>
       <div className='shipping-form__title-container'>
@@ -100,6 +105,7 @@ export const ShippingForm = () => {
               })}
             />
           </div>
+
           <Button type={"submit"} option='primary' text='Confirm' />
         </form>
       </div>

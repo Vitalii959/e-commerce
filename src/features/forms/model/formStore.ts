@@ -7,9 +7,15 @@ export type FormType = {
   address: ShippingType;
   shippingMethod: MethodType | null;
 
+  isShippingFormSuccess: boolean;
+  isCustomerFormSuccess: boolean;
+
   setCustomer: (object: CustomerType) => void;
   setAddress: (object: ShippingType) => void;
   setShippingMethod: (object: MethodType) => void;
+
+  setIsShippingFormSuccess: (isShippingFormSuccess: boolean) => void;
+  setIsCustomerFormSuccess: (isCustomerFormSuccess: boolean) => void;
 };
 
 export const formStore = create<FormType>((set) => ({
@@ -25,7 +31,15 @@ export const formStore = create<FormType>((set) => ({
   },
   shippingMethod: null,
 
+  isShippingFormSuccess: false,
+  isCustomerFormSuccess: false,
+
   setCustomer: (object) => set({customer: object}),
   setAddress: (object) => set({address: object}),
-  setShippingMethod: (object) => set({shippingMethod: object})
+  setShippingMethod: (object) => set({shippingMethod: object}),
+
+  setIsShippingFormSuccess: (isShippingFormSuccess) =>
+    set({isShippingFormSuccess}),
+  setIsCustomerFormSuccess: (isCustomerFormSuccess) =>
+    set({isCustomerFormSuccess})
 }));
