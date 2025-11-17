@@ -8,7 +8,7 @@ import "./shared/styles/global.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename='/e-commerce'>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>
