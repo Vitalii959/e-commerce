@@ -7,7 +7,7 @@ export const FormsLayout = () => {
   return (
     <div className='formLayout'>
       <div className='cart__container'>
-        <Cart />
+        <Cart type='view' />
       </div>
 
       <Outlet />

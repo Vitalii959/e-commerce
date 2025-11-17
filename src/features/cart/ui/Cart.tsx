@@ -7,20 +7,23 @@ import {Link} from "react-router";
 import {useCart} from "../model/useCart";
 
 type Props = {
+  type: "view" | "edit";
+  title?: string;
   checkoutLink?: string;
   handleClick?: () => void;
 };
 
-export const Cart = ({checkoutLink, handleClick}: Props) => {
+export const Cart = ({type, title, checkoutLink, handleClick}: Props) => {
   const {product, subtotal, shipping, taxes, total} = useCart();
 
   if (product.length === 0) return <p>Cart is empty</p>;
   return (
     <>
-      <h4 className='cart__title'>Order summary</h4>
+      {title && <h4 className='cart__title'>Order summary</h4>}
       <div className='cart__items'>
         {product.map((item) => (
           <CartItem
+            type={type}
             key={item._id}
             image={item.image}
             title={item.title}
