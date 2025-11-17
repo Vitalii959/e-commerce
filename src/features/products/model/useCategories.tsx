@@ -3,7 +3,7 @@ import {useMemo} from "react";
 
 export type Categories = {
   id: string;
-  count: string;
+  count: number;
 };
 export const useCategories = (products?: Product[]): Categories[] => {
   return useMemo(() => {
