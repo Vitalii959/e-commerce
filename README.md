@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# E-Commerce Store (React + TS )
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[-> Production Demo <- ](https://e-commerce-vitalii.vercel.app)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Dynamic product fetching (React Query)
+- Multi-step checkout flow (React Router)
+- Global state management (Zustand)
+- Form validation with reusable components (React Hook Form)
+- Accessibility (A11y)
+- Responsive design (Web + Mobile)
+- Feature-Slice Design (FSD approach)
+- Styling using regular CSS + CSS Modules
+- Custom Hooks for reusable logic
+- Performance optimizations: useCallback, useMemo, useRef
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
+## App road map
 ```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+src/
+ ├─ app/               # Providers, router, main-level layout
+ ├─ pages/             # Routing-level pages
+ ├─ widgets/           # Composed UI blocks 
+ ├─ features/          # Business logic + hooks (filter, cart, forms)
+ └─ shared/            # UI components, helpers, types, constants,Images, icons
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ ## To-Do
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Favorites page
+- User authentication
+- Product search
+- Single product page
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+<img width="340" height="640" alt="Screenshot 2025-11-17 at 6 30 36 PM" src="https://github.com/user-attachments/assets/437522b4-3846-4fa9-8d92-ec09e3fe3912" />
+<img width="340" height="640" alt="Screenshot 2025-11-17 at 6 30 54 PM" src="https://github.com/user-attachments/assets/8594438b-6fb7-475a-a6d9-eba0a6eddfcc" />
+<img width="340" height="640" alt="Screenshot 2025-11-17 at 6 31 04 PM" src="https://github.com/user-attachments/assets/4c4f99bc-9690-43ce-95b0-cbda513f27a4" /> 
+<img width="340" height="640" alt="Screenshot 2025-11-17 at 6 31 13 PM" src="https://github.com/user-attachments/assets/b5f794d1-5145-4181-8b12-550eb55cc3dd" />
+
+![e-commerce](https://github.com/user-attachments/assets/e765a21e-ab93-4d25-8ca1-229ca90c5058)
